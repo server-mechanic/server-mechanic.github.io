@@ -77,6 +77,7 @@
 
     </div> <!-- /container -->
 
+    <script src="assets/jquery-1.12.1/jquery.min.js"></script>
     <script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
