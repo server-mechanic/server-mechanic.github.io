@@ -1,0 +1,17 @@
+<page path="doc" short-title="Docs">
+<h2>Documentation</h2>
+<p>* Docs
+  * Usage Scenarios
+    * Server or Virtual Machine
+    * Docker container
+  * [Installation](https://github.com/server-mechanic/me
+chanic/blob/master/doc/INSTALLATION.md)
+  * [How it Works](https://github.com/server-mechani
+c/mechanic/blob/master/doc/HOWITWORKS.md)
+  * Advanced
+    * Pre-Migrations, Post-Migrations
+  * Distribution-Options
+    * Migrations in git, start manually
+    * mechanic triggered by event via mechanicd
+</p>
+</page>

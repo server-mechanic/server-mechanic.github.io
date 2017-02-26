@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site xmlns:xi="http://www.w3.org/2001/XInclude">
+  <pages>
+    <xi:include href="index.xml"/>
+<!--
+    <xi:include href="quickstart.xml"/>
+    <xi:include href="doc.xml"/>
+## Index
+* Quickstart
+  * Install
+  * Write first Migration
+  * Migrate
+* Docs
+  * Usage Scenarios
+    * Server or Virtual Machine
+    * Docker container
+  * [Installation](https://github.com/server-mechanic/mechanic/blob/master/doc/INSTALLATION.md)
+  * [How it Works](https://github.com/server-mechanic/mechanic/blob/master/doc/HOWITWORKS.md)
+  * Advanced
+    * Pre-Migrations, Post-Migrations
+  * Distribution-Options
+    * Migrations in git, start manually
+    * mechanic triggered by event via mechanicd
+* Project
+  * Travis, Circle, ...
+  * Contributing
+  * [History](https://github.com/server-mechanic/mechanic/blob/master/doc/HISTORY.md)
+  * [Project Source Repository](https://github.com/server-mechanic/mechanic)
+  * [Project Package Repository](https://github.com/server-mechanic/packages)
+* [License](https://github.com/server-mechanic/mechanic/blob/master/LICENSE)
+-->
+  </pages>
+</site>

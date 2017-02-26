@@ -1,0 +1,13 @@
+<page path="quickstart" short-title="Quickstart">
+  <h2>Quickstart</h2>
+  <h3>Prerequisites</h3>
+  <p>You need ONE of:</p>
+  <ul>
+    <li>Debian wheezy, jessie, sid (32-bit or 64-bit)</li>
+    <li>Ubuntu xenial (16.04), yakkety (16.10) (32-bit or 64-bit)</li>
+  </ul>
+  <h3>Installation</h3>
+  <code>
+  curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+  </code>
+</page>
