@@ -84,3 +84,13 @@ body {
  margin: 0;
  padding: 0;
 }
+
+table#platform-support tr:first-child td {
+ font-weight: bold;
+}
+table#platform-support td.supported {
+ background-color: lightgreen;
+}
+table#platform-support td.unsupported {
+ background-color: pink;
+}

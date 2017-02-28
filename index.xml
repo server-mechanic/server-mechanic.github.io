@@ -13,7 +13,97 @@
         <p><a class="btn btn-lg btn-success" href="https://github.com/server-mechanic/mechanic" role="button">Get started now</a></p>
       </div>
 
+      <div>
+
+      <div class="row">
+        <div class="col-lg-12">
+<h2>Supported Platforms</h2>
+  <table class="table table-bordered table-striped" id="platform-support">
+    <tr><td>OS</td><td>Dist.</td><td>Version</td><td>Arch.</td><td>Supported</td><td>Notes</td></tr>
+    <tr><td>Linux</td><td>Ubuntu</td><td>xenial (16.04)</td><td>i386</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Ubuntu</td><td>xenial (16.04)</td><td>amd64</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Ubuntu</td><td>yakkety (16.10)</td><td>i386</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Ubuntu</td><td>yakkety (16.10)</td><td>amd64</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>wheezy (7)</td><td>i386</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>wheezy (7)</td><td>amd64</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>jessie (8)</td><td>i386</td><td class="supported">Yes</td><td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Broken!</a></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>jessie (8)</td><td>amd64</td><td class="supported">Yes</td><td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Broken!</a></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>sid (9)</td><td>i386</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>sid (9)</td><td>amd64</td><td class="supported">Yes</td><td></td></tr>
+    <tr><td>Linux</td><td>Fedora</td><td>25</td><td>i386</td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>Linux</td><td>Fedora</td><td>25</td><td>amd64</td><td class="unsupported">Not yet</td><td>In Preparation</td></tr>
+    <tr><td>Linux</td><td>Centos</td><td>7</td><td>i386</td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>Linux</td><td>Centos</td><td>7</td><td>amd64</td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>Windows</td><td>Any</td><td>Any</td><td>Any</td><td class="unsupported">Not planned</td><td></td></tr>
+  </table>
+    </div>
+  </div>
+  <!-- Arch, SuSE, Mac, FreeBSD, OpenBSD, Solaris, ... -->
 <!--
+<h1>Installation</h1>
+<code>
+curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+</code>
+
+
+<p>Place your migrations below /var/lib/mechanic/migration.d/ or /etc/mechanic/migration.d/. (Make sure they are executable and exit with 0 in case of success.)</p>
+Start the Server Mechanic
+<code>
+mechanic migrate
+</code>
+
+## Docker container
+* Add installation of mechanic to your Dockerfile
+```
+RUN curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+```
+* Supposedly you want mechanic state to survice container restarts, so add a volume:
+```
+VOLUME /mechanic.volume
+```
+* Adjust /etc/mechanic.conf so mechanic will put state into the volume:
+```
+# /etc/mechanic.conf
+[main]
+log_file=/mechanic.volume/log/mechanic.log
+pre_migration_dirs=/var/lib/mechanic/pre-migration.d/
+migration_dirs=/var/lib/mechanic/migration.d/
+post_migration_dirs=/var/lib/mechanic/post-migration.d/
+run_dir=/mechanic.volume/tmp/
+state_dir=/mechanic.volume/state
+```
+* Place your migrations below /var/lib/mechanic/migration.d/. (Make sure they are executable and exit with 0 in case of success.)
+* Extend your container entrypoint so, that mechanic migrations will be run on container startup. Mechanic will replace itself with the actual endpoint.
+```
+ENTRYPOINT ["/usr/sbin/mechanic", "migrate", "- -", "PUT", "ACTUAL", "ENTRYPOINT", "HERE" ]
+```
+* Don't forget to start your container with the external volume mounted. (-v /path/to/volume:/mechanic.volume).
+-->
+</div>
+<!--
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+      </div>
       <div class="row marketing">
         <div class="col-lg-6">
           <h4>Subheading</h4>
