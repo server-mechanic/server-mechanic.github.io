@@ -49,10 +49,14 @@
     <tr><td>Linux</td><td>Fedora</td><td>25</td><td>amd64</td><td class="unsupported">Not yet</td><td>In Preparation</td></tr>
     <tr><td>Linux</td><td>Centos</td><td>7</td><td>i386</td><td class="unsupported">Not yet</td><td></td></tr>
     <tr><td>Linux</td><td>Centos</td><td>7</td><td>amd64</td><td class="unsupported">Not yet</td><td></td></tr>
-    <tr><td>Windows</td><td>Any</td><td>Any</td><td>Any</td><td class="unsupported">Not planned</td><td></td></tr>
+    <tr><td>Linux</td><td>SuSE</td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>Linux</td><td>Arch</td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>BSD</td><td></td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>OSX</td><td></td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>Solaris</td><td></td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
+    <tr><td>Windows</td><td></td><td></td><td></td><td class="unsupported">Not planned</td><td></td></tr>
   </table>
     </div>
-  <!-- Arch, SuSE, Mac, FreeBSD, OpenBSD, Solaris, ... -->
       <div class="row">
         <div class="col-lg-12">
           <h2>Installation</h2>
