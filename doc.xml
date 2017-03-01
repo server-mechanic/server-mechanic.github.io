@@ -1,5 +1,6 @@
 <page path="doc" short-title="Docs">
 <h2>Documentation</h2>
+<!--
 <p>* Docs
   * Usage Scenarios
     * Server or Virtual Machine
@@ -14,4 +15,5 @@ c/mechanic/blob/master/doc/HOWITWORKS.md)
     * Migrations in git, start manually
     * mechanic triggered by event via mechanicd
 </p>
+-->
 </page>
