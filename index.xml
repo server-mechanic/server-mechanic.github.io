@@ -41,8 +41,8 @@
     <tr><td>Linux</td><td>Ubuntu</td><td>yakkety (16.10)</td><td>amd64</td><td class="supported">Yes</td><td></td></tr>
     <tr><td>Linux</td><td>Debian</td><td>wheezy (7)</td><td>i386</td><td class="supported">Yes</td><td></td></tr>
     <tr><td>Linux</td><td>Debian</td><td>wheezy (7)</td><td>amd64</td><td class="supported">Yes</td><td></td></tr>
-    <tr><td>Linux</td><td>Debian</td><td>jessie (8)</td><td>i386</td><td class="supported">Yes</td><td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Broken!</a></td></tr>
-    <tr><td>Linux</td><td>Debian</td><td>jessie (8)</td><td>amd64</td><td class="supported">Yes</td><td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Broken!</a></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>jessie (8)</td><td>i386</td><td class="supported">Yes</td><td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install broken!</a></td></tr>
+    <tr><td>Linux</td><td>Debian</td><td>jessie (8)</td><td>amd64</td><td class="supported">Yes</td><td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install broken!</a></td></tr>
     <tr><td>Linux</td><td>Debian</td><td>sid (9)</td><td>i386</td><td class="supported">Yes</td><td></td></tr>
     <tr><td>Linux</td><td>Debian</td><td>sid (9)</td><td>amd64</td><td class="supported">Yes</td><td></td></tr>
     <tr><td>Linux</td><td>Fedora</td><td>25</td><td>i386</td><td class="unsupported">Not yet</td><td></td></tr>
