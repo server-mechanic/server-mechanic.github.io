@@ -94,3 +94,7 @@ table#platform-support td.supported {
 table#platform-support td.unsupported {
  background-color: pink;
 }
+
+verbatim.code {
+ background-color: white; 
+}

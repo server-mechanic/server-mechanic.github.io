@@ -67,10 +67,10 @@
             <li>and installs the mechanic package.</li>
           </ul>
 
-          <p>Paste the following command into your command line:</p>
+          <p>Execute the install script via the following command:</p>
           <code>
-          curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
-          </code>
+curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+</code>
         </div>
       </div>
 
@@ -81,16 +81,16 @@
 
           <p>An example migration:</p>
           <code>
-          #!/bin/bash -ex
+#!/bin/bash -ex
 
-          echo "Hooray, mechanic is running." > /tmp/hooray.log
-          exit 0
-          </code>
+echo "Hooray, mechanic is running." > /tmp/hooray.log
+exit 0
+</code>
 
           <p>Run the Server Mechanic to apply migrations:</p>
           <code>
-          mechanic migrate
-          </code>
+mechanic migrate
+</code>
         </div>
       </div>
 
