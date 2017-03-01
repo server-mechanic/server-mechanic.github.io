@@ -69,13 +69,28 @@
           </code>
         </div>
       </div>
-<!--
-<p>Place your migrations below /var/lib/mechanic/migration.d/ or /etc/mechanic/migration.d/. (Make sure they are executable and exit with 0 in case of success.)</p>
-Start the Server Mechanic
-<code>
-mechanic migrate
-</code>
 
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>First steps</h2>
+          <p>Place your migrations below /var/lib/mechanic/migration.d/ or /etc/mechanic/migration.d/. (Make sure they are executable and exit with 0 in case of success.)</p>
+
+          <p>An example migration:</p>
+          <code>
+          #!/bin/bash -ex
+
+          echo "Hooray, mechanic is running." > /tmp/hooray.log
+          exit 0
+          </code>
+
+          <p>Run the Server Mechanic to apply migrations:</p>
+          <code>
+          mechanic migrate
+          </code>
+        </div>
+      </div>
+
+<!--
 ## Docker container
 * Add installation of mechanic to your Dockerfile
 ```
