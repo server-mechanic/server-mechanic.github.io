@@ -77,19 +77,37 @@ curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/instal
       <div class="row">
         <div class="col-lg-12">
           <h2>First steps</h2>
-          <p>Place your migrations below /var/lib/mechanic/migration.d/ or /etc/mechanic/migration.d/. (Make sure they are executable and exit with 0 in case of success.)</p>
+          <p>A migration can be written as a shell script. This is a simple example migration:</p>
+          <code>#!/bin/bash -ex
 
-          <p>An example migration:</p>
-          <code>
-#!/bin/bash -ex
-
-echo "Hooray, mechanic is running." > /tmp/hooray.log
+echo "# Hooray, mechanic is running." > /tmp/hooray.log
 exit 0
 </code>
+
+          <p>The next command places the migration script in the mechanic migrations folder and makes it executable.</p>
+          <code><![CDATA[cat - >/var/lib/mechanic/migration.d/20161224_hooray.sh <<EOB
+#!/bin/bash -ex
+
+echo "# Hooray, mechanic is running." > /tmp/hooray.log
+exit 0
+EOB
+chmod 755 /var/lib/mechanic/migration.d/20161224_hooray.sh
+]]></code>
 
           <p>Run the Server Mechanic to apply migrations:</p>
           <code>
 mechanic migrate
+</code>
+
+          <p>Query Server Mechanic if the migration has been applied:</p>
+          <code>
+mechanic list-migrations
+</code>
+
+          <p>Verify that the migration's effect is visible:</p>
+          <code>
+cat /tmp/hooray.log
+# Hooray, mechanic is running.
 </code>
         </div>
       </div>
