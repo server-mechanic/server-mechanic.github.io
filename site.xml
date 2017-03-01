@@ -2,9 +2,11 @@
 <site xmlns:xi="http://www.w3.org/2001/XInclude">
   <pages>
     <xi:include href="index.xml"/>
-<!--
     <xi:include href="quickstart.xml"/>
     <xi:include href="doc.xml"/>
+    <xi:include href="project.xml"/>
+<!--
+    <xi:include href="quickstart.xml"/>
 ## Index
 * Quickstart
   * Install

@@ -21,7 +21,9 @@ for file in $(find . -name "*.xml" -not -name "site.xml"); do
   mkdir -p $PUBLIC_DIR/$(dirname $file)
   target_file=$PUBLIC_DIR/$path.html
   #if [ ! $target_file -o $file -nt $target_file ]; then
-  echo "Processing $path..."
+  echo "############################"
+  echo "# Processing $path..."
+  echo "############################"
   xsltproc -v -o $target_file \
 	--xinclude --encoding utf-8 --stringparam page $path \
 	./xsl/site.xsl ./site.xml
