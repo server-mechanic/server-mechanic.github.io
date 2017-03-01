@@ -20,21 +20,12 @@
   </head>
 
   <body>
-      <div class="header clearfix">
-        <nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container">
+    <div class="container">
+        <nav class="navbar ">
             <div class="navbar-header">
 <a class="navbar-brand" href="#">
 	<img id="logo" src="assets/images/mechanic_logo.png"/>
       </a>
-<!--
-<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-</button>
--->
             </div>
 <!--
           <div id="navbar" class="navbar-collapse collapse">
@@ -56,10 +47,7 @@
           </ul>
         </div>
 -->        
-</div>
 </nav>
-      </div>
-    <div class="container">
 
       <!-- multi page
       <xsl:apply-templates select="pages/page[@path=$page]"/>
