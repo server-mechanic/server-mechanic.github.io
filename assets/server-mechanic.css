@@ -85,7 +85,7 @@ body {
  padding: 0;
 }
 
-table#platform-support tr:first-child td {
+table tr:first-child td {
  font-weight: bold;
 }
 table#platform-support td.supported {
