@@ -1,0 +1,5 @@
+FROM ubuntu:xenial
+
+RUN apt-get update && \
+	apt-get install -y xsltproc inotify-tools
+

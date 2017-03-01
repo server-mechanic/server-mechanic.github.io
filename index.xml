@@ -53,13 +53,23 @@
   </table>
     </div>
   <!-- Arch, SuSE, Mac, FreeBSD, OpenBSD, Solaris, ... -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Installation</h2>
+
+          <p>Server Mechanic is installed via a shell script, that</p>
+          <ul>
+            <li>adds a package repository to your system</li>
+            <li>and installs the mechanic package.</li>
+          </ul>
+
+          <p>Paste the following command into your command line:</p>
+          <code>
+          curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+          </code>
+        </div>
+      </div>
 <!--
-<h1>Installation</h1>
-<code>
-curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
-</code>
-
-
 <p>Place your migrations below /var/lib/mechanic/migration.d/ or /etc/mechanic/migration.d/. (Make sure they are executable and exit with 0 in case of success.)</p>
 Start the Server Mechanic
 <code>
