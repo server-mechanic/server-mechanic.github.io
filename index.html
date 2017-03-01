@@ -11,9 +11,8 @@
 <link rel="stylesheet" href="assets/server-mechanic.css">
 </head>
 <body>
-<div class="header clearfix"><nav class="navbar navbar-default navbar-fixed-top"><div class="container"><div class="navbar-header"><a class="navbar-brand" href="#"><img id="logo" src="assets/images/mechanic_logo.png"></a></div></div></nav></div>
 <div class="container">
-<a id="index"></a><div class="jumbotron">
+<nav class="navbar "><div class="navbar-header"><a class="navbar-brand" href="#"><img id="logo" src="assets/images/mechanic_logo.png"></a></div></nav><a id="index"></a><div class="jumbotron">
         <h1 class="display-3">Server Evolution Made Easy.</h1>
         <p>Server Mechanic is a tool to apply migration scripts to your machine step by step in a reliable way.</p>
         <p>
@@ -23,9 +22,325 @@
           · Docker Containers<br>
           · Workspaces
         </p>
-        <p><a class="btn btn-lg btn-success" href="https://github.com/server-mechanic/mechanic" role="button">Get started now</a></p>
+        <p><a class="btn btn-lg btn-success" href="#getting-started" role="button">Get started now</a></p>
       </div>
-<footer class="footer"><p class="pull-right"><a target="_blank" href="https://github.com/server-mechanic/mechanic"><svg aria-hidden="true" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></p>
+<div class="row">
+        <div class="col-lg-12">
+          <h1>
+<a id="getting-started"></a>Getting started</h1>
+          <p>If you want to manage your machines (bare metal, virtual machines, containers or simply workspaces) in a reproducable way, one strategy is the creation of "infrastructure as code". Server Mechanic executes this code and so your infrastructure is created or changed.</p>
+        </div>
+      </div>
+<div class="row">
+        <div class="col-lg-12">
+<h2>How it works</h2>
+          <h4>Server Mechanic for servers and virtual machines</h4>
+          <p>With Server Mechanic you author changes to your machines as scripts in your favorite language, e.g. shell scripts. Server Mechanic collects these migration scripts, executes them and records them as applied in an internal database. Next time only new migrations will be executed. In case of an error you fix the problem and start over.
+</p>
+      </div>
+  </div>
+<div class="row">
+        <div class="col-lg-12">
+          <h4>Server Mechanic for Docker containers</h4>
+          <p>Docker already utilizes the step by step approach with the commands in your Dockerfile. These commands are run at container image build time. So you have full access to the container's internal state. But external volumes cannot be manipulated by Dockerfile commands. Here Server Mechanic comes into play.</p>
+          <p>Server Mechanic is started on container startup, applies your migration which migrates the state in your volumes, then container startup proceeds. So you can roll out adjustments to external volumes with new container versions and containers and volumes stay in sync.</p>
+      </div>
+  </div>
+<div class="row">
+        <div class="col-lg-12">
+<h2>Supported Platforms</h2>
+  <p>Please check if your platform is supported.</p>
+  <table class="table table-bordered table-striped" id="platform-support">
+    <tr>
+<td>OS</td>
+<td>Dist.</td>
+<td>Version</td>
+<td>Arch.</td>
+<td>Supported</td>
+<td>Notes</td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Ubuntu</td>
+<td>xenial (16.04)</td>
+<td>i386</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Ubuntu</td>
+<td>xenial (16.04)</td>
+<td>amd64</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Ubuntu</td>
+<td>yakkety (16.10)</td>
+<td>i386</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Ubuntu</td>
+<td>yakkety (16.10)</td>
+<td>amd64</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Debian</td>
+<td>wheezy (7)</td>
+<td>i386</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Debian</td>
+<td>wheezy (7)</td>
+<td>amd64</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Debian</td>
+<td>jessie (8)</td>
+<td>i386</td>
+<td class="supported">Yes</td>
+<td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install broken!</a></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Debian</td>
+<td>jessie (8)</td>
+<td>amd64</td>
+<td class="supported">Yes</td>
+<td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install broken!</a></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Debian</td>
+<td>sid (9)</td>
+<td>i386</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Debian</td>
+<td>sid (9)</td>
+<td>amd64</td>
+<td class="supported">Yes</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Fedora</td>
+<td>25</td>
+<td>i386</td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Fedora</td>
+<td>25</td>
+<td>amd64</td>
+<td class="unsupported">Not yet</td>
+<td>In Preparation</td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Centos</td>
+<td>7</td>
+<td>i386</td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Centos</td>
+<td>7</td>
+<td>amd64</td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>SuSE</td>
+<td></td>
+<td></td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>Linux</td>
+<td>Arch</td>
+<td></td>
+<td></td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>BSD</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>OSX</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>Solaris</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="unsupported">Not yet</td>
+<td></td>
+</tr>
+    <tr>
+<td>Windows</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="unsupported">Not sure</td>
+<td></td>
+</tr>
+  </table>
+    </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Installation</h2>
+
+          <p>The easiest way to install Server Mechanic is the installer script. No magic, the installer script</p>
+          <ul>
+            <li>adds a package repository to your system</li>
+            <li>and installs the mechanic package.</li>
+          </ul>
+
+          <p>Execute the install script via the following command:</p>
+          <pre class="code">
+curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+</pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>First steps</h2>
+          <p>A migration can be written as a shell script. This is a simple example migration:</p>
+          <pre class="code">#!/bin/bash -ex
+
+echo "# Hooray, mechanic is running." &gt; /tmp/hooray.log
+exit 0
+</pre>
+
+          <p>The next command places the migration script in the mechanic migrations folder and makes it executable.</p>
+          <pre class="code">cat - &gt;/var/lib/mechanic/migration.d/20161224_hooray.sh &lt;&lt;EOB
+#!/bin/bash -ex
+
+echo "# Hooray, mechanic is running." &gt; /tmp/hooray.log
+exit 0
+EOB
+chmod 755 /var/lib/mechanic/migration.d/20161224_hooray.sh
+</pre>
+
+          <p>Run the Server Mechanic to apply migrations:</p>
+          <pre class="code">
+mechanic migrate
+</pre>
+
+          <p>Query Server Mechanic if the migration has been applied:</p>
+          <pre class="code">
+mechanic list-migrations
+</pre>
+
+          <p>Verify that the migration's effect is visible:</p>
+          <pre class="code">
+cat /tmp/hooray.log
+# Hooray, mechanic is running.
+</pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Status</h1>
+          <p>Server Mechanic is in an early stage ("unstable"). Use it carefully and expect things to break.</p>
+          <p>We appreciate any feedback about the tool and your usage scenarios so we can learn and improve Server Mechanic.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>License</h1>
+          <p>Copyright (c) 2016,2017 by the Server Mechanic Team.</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at<br>
+<br>
+<a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a><br>
+<br>
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Contributing</h1>
+          <p>Server Mechanic is an open source project, and contributions are welcome! Feel free to raise an issue or submit a pull request on github.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Learn more</h1>
+          For more information visit <a target="_blank" href="https://github.com/server-mechanic/mechanic">Server Mechanic project at github</a>.
+        </div>
+      </div>
+
+
+<!--
+## Docker container
+* Add installation of mechanic to your Dockerfile
+```
+RUN curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+```
+* Supposedly you want mechanic state to survice container restarts, so add a volume:
+```
+VOLUME /mechanic.volume
+```
+* Adjust /etc/mechanic.conf so mechanic will put state into the volume:
+```
+# /etc/mechanic.conf
+[main]
+log_file=/mechanic.volume/log/mechanic.log
+pre_migration_dirs=/var/lib/mechanic/pre-migration.d/
+migration_dirs=/var/lib/mechanic/migration.d/
+post_migration_dirs=/var/lib/mechanic/post-migration.d/
+run_dir=/mechanic.volume/tmp/
+state_dir=/mechanic.volume/state
+```
+* Place your migrations below /var/lib/mechanic/migration.d/. (Make sure they are executable and exit with 0 in case of success.)
+* Extend your container entrypoint so, that mechanic migrations will be run on container startup. Mechanic will replace itself with the actual endpoint.
+```
+ENTRYPOINT ["/usr/sbin/mechanic", "migrate", "- -", "PUT", "ACTUAL", "ENTRYPOINT", "HERE" ]
+```
+* Don't forget to start your container with the external volume mounted. (-v /path/to/volume:/mechanic.volume).
+-->
+</div>
+<footer class="footer row"><p class="pull-right"><a target="_blank" href="https://github.com/server-mechanic/mechanic"><svg aria-hidden="true" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></p>
 <p>Copyright © 2016, 2017 by the Server Mechanic Team.</p></footer>
 </div>
 <script src="assets/jquery-1.12.1/jquery.min.js"></script><script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><script>
