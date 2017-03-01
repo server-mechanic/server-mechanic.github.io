@@ -87,7 +87,6 @@
 
       <div class="row">
         <div class="col-lg-12">
-          <h1>Learn more</h1>
           For more information visit <a target="_blank" href="https://github.com/server-mechanic/mechanic">Server Mechanic project at github</a>.
         </div>
       </div>
