@@ -10,14 +10,19 @@
           &#183; Docker Containers<br/>
           &#183; Workspaces
         </p>
-        <p><a class="btn btn-lg btn-success" href="https://github.com/server-mechanic/mechanic" role="button">Get started now</a></p>
+        <p><a class="btn btn-lg btn-success" href="#getting-started" role="button">Get started now</a></p>
       </div>
 
       <div class="row">
         <div class="col-lg-12">
+          <h1><a id="getting-started"></a>Getting started</h1>
+          <p>If you want to manage your machines (bare metal, virtual machines, containers or simply workspaces) in a reproducable way, one strategy is the creation of "infrastructure as code". Server Mechanic executes this code and so your infrastructure is created or changed.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
 <h2>How it works</h2>
           <h4>Server Mechanic for servers and virtual machines</h4>
-          <p>If you want to manage your machines in a reproducable way, one strategy is the creation of "infrastructure as code".</p>
           <p>With Server Mechanic you author changes to your machines as scripts in your favorite language, e.g. shell scripts. Server Mechanic collects these migration scripts, executes them and records them as applied in an internal database. Next time only new migrations will be executed. In case of an error you fix the problem and start over.
 </p>
       </div>
@@ -33,6 +38,7 @@
       <div class="row">
         <div class="col-lg-12">
 <h2>Supported Platforms</h2>
+  <p>Please check if your platform is supported.</p>
   <table class="table table-bordered table-striped" id="platform-support">
     <tr><td>OS</td><td>Dist.</td><td>Version</td><td>Arch.</td><td>Supported</td><td>Notes</td></tr>
     <tr><td>Linux</td><td>Ubuntu</td><td>xenial (16.04)</td><td>i386</td><td class="supported">Yes</td><td></td></tr>
@@ -54,14 +60,14 @@
     <tr><td>BSD</td><td></td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
     <tr><td>OSX</td><td></td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
     <tr><td>Solaris</td><td></td><td></td><td></td><td class="unsupported">Not yet</td><td></td></tr>
-    <tr><td>Windows</td><td></td><td></td><td></td><td class="unsupported">Not planned</td><td></td></tr>
+    <tr><td>Windows</td><td></td><td></td><td></td><td class="unsupported">Not sure</td><td></td></tr>
   </table>
     </div>
       <div class="row">
         <div class="col-lg-12">
           <h2>Installation</h2>
 
-          <p>Server Mechanic is installed via a shell script, that</p>
+          <p>The easiest way to install Server Mechanic is the installer script. No magic, the installer script</p>
           <ul>
             <li>adds a package repository to your system</li>
             <li>and installs the mechanic package.</li>
