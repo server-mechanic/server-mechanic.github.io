@@ -67,4 +67,50 @@ c/mechanic/blob/master/doc/HOWITWORKS.md)
     * mechanic triggered by event via mechanicd
 </p>
 -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1><a id="development"></a>Development</h1>
+          <p>Server Mechanic is written in python. (Early versions where based on Go, C and C++.)</p>
+          <p>Unit tests are written with the python mock lib. (Everything testable <i>should</i> be tested via a unit test.)</p>
+          <p>Integration tests are currently based on a set of custom shell scripts performing the following steps to verify several scenarios (There is a real chance that we switch to docker containers in the near future - for now the setup is sufficient.):</p>
+          <ul>
+            <li>Setup a test scenario based on files in a temporary folder.</li>
+            <li>Run the mechanic in this temporary folder utilizing MECHANIC_ROOT_DIR to change mechanic root.</li>
+            <li>Then exit code, contents of the test file system, the internal state of the mechanic database are merged into an output listing.</li>
+            <li>The output listing is compared to the expected output.</li>
+          </ul>
+
+          <h2>Prerequesites</h2>
+          <h3>Install system packages</h3>
+          <code># RedHat/ CentOS/ Fedora
+yum -y install python sqlite sqlite-devel make git
+# Debian/ Ubuntu
+apt-get install -y python2.7 sqlite3 sqlite3-dev make</code>
+
+          <h3>Install python packages</h3>
+          <code>pip install mock coverage</code>
+
+          <h3>Install docker</h3>
+          <p>For docker installation refer to <a target="_blank" href="http://docker.io">docker installation instructions</a>.</p>
+
+          <h3>Build the project</h3>
+          <p>This is the make target you probably will use for development.</p>
+          <ul><li>Precompiles the python code</li>
+          <li>runs unit tests</li>
+          <li>runs integration tests.</li>
+          </ul>
+          <code>make</code>
+          <p>or</p>
+          <code>make default</code>
+
+          <h3>Build all</h3>
+          <ul><li>Precompiles the python code</li>
+          <li>runs unit tests</li>
+          <li>runs integration tests</li>
+          <li>generates coverage report</li>
+          <li>build installation packages.</li>
+          </ul>
+          <code>make all</code>
+        </div>
+      </div>
 </page>
