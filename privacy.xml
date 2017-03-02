@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page path="privacy">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h1><a id="privacy"></a>Privacy</h1>
+          <p>This web page uses Google Analytics.<br/><br/>Google Analytics is a web analysis service provided by Google. Google utilizes the data collected to track and examine the use of www.server-mechanic.org, to prepare reports on its activities and share them with other Google services.<br/>
+Google may use the data collected to contextualize and personalize the ads of its own advertising network.<br/>
+<br/>
+Personal data collected: Cookie and Usage Data. Place of processing: USA. Find Google's privacy policy <a href="http://www.google.com/intl/en/policies/privacy/" target="_blank">here</a>.
+</p>
+        </div>
+      </div>
+</page>
