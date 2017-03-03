@@ -90,12 +90,6 @@
         <!--<h2><xsl:value-of select="@short-title"/></h2>-->
 <xsl:apply-templates select="*"/>
 
-      <div class="row">
-        <div class="col-lg-12">
-          For more information visit <a target="_blank" href="https://github.com/server-mechanic/mechanic">Server Mechanic project at github</a>.
-        </div>
-      </div>
-
 </xsl:template>
 
 <xsl:include href="./code.xsl"/>
