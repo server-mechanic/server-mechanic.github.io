@@ -91,7 +91,7 @@ apt-get install -y python2.7 sqlite3 sqlite3-dev make</code>
           <code>pip install mock coverage</code>
 
           <h3>Install docker</h3>
-          <p>For docker installation refer to <a target="_blank" href="http://docker.io">docker installation instructions</a>.</p>
+          <p>For docker installation refer to <a target="_blank" href="https://docs.docker.com/engine/installation/linux/">docker installation instructions</a>.</p>
 
           <h3>Build the project</h3>
           <p>This is the make target you probably will use for development.</p>
