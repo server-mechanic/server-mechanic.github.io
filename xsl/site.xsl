@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="keywords" content="devops,migration,server,virtual machine,docker,container,alternative,chef,puppet,ansible,saltstack,lightweight,python,open source,github">
+    <meta name="keywords" content="devops,migration,server,virtual machine,docker,container,alternative,chef,puppet,ansible,saltstack,lightweight,python,open source,github"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="Server Mechanic is a tool to apply migration scripts to your machine step by step in a reliable way."/>
     <meta name="author" content="Cornelius Buschka, Server Mechanic Team"/>
