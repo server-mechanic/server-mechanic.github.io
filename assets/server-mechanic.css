@@ -102,3 +102,8 @@ table#platform-support td.unsupported {
 verbatim.code {
  background-color: white; 
 }
+
+.trademarks {
+ font-size: 66%;
+ color: #777;
+}

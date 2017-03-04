@@ -46,7 +46,8 @@
 
       <xsl:apply-templates select="pages/page[@path=$page]"/>
 
-      <footer class="footer row">
+      <footer class="footer">
+        <div class="row">
         <div class="col-md-6 col-lg-6">
         <p>Copyright &#169; 2016, 2017 by the Server Mechanic Team.</p>
         </div>
@@ -60,6 +61,14 @@
 </a>
         </p>
         </div>
+        </div>
+
+<div class="row">
+<div class="col-lg-12">
+<p class="trademarks">Docker is a trademark or registered trademark of Docker, Inc.; Puppet is a trademark or registered trademark of Puppet, Inc.; Ansible is a trademark or registered trademark of Red Hat, Inc.; SaltStack is a trademark or registered trademark of SaltStack Inc.</p>
+</div>
+</div>
+
       </footer>
 
     </div> <!-- /container -->
