@@ -10,6 +10,7 @@
           &#183; Docker Containers<br/>
           &#183; Workspaces
         </p>
+        <p>A lightweight alternative to tools like puppet, ansible, saltstack, etc.</p>
         <p><a class="btn btn-lg btn-success" href="quickstart.html" role="button">Get started now</a></p>
       </div>
 
