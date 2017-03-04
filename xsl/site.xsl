@@ -15,8 +15,8 @@
     <meta name="author" content="Cornelius Buschka, Server Mechanic Team"/>
     <link rel="icon" href="../../favicon.ico"/>
     <title>Server Mechanic - Server Evolution Made Easy</title>
-    <link rel="stylesheet" href="assets/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="assets/server-mechanic.css"/>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="server-mechanic.css"/>
   </head>
 
   <body>
@@ -24,7 +24,7 @@
 <div class="row">
 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 <a id="logo" href="/">
-	<img alt="Logo" src="assets/images/mechanic_logo.png"/>
+	<img alt="Logo" src="images/mechanic_logo.png"/>
       </a>
 </div>
 <div class="navbar col-xs-10 col-sm-10 col-md-10 col-lg-10">
@@ -73,8 +73,8 @@
 
     </div> <!-- /container -->
 
-    <script src="assets/jquery-1.12.1/jquery.min.js"></script>
-    <script src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="jquery-1.12.1/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

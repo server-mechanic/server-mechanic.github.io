@@ -10,10 +10,7 @@ fi
 mkdir -p $PUBLIC_DIR
 
 cd $SRC_DIR
-cp -uvR assets/ $PUBLIC_DIR/
-# legacy
-cp -uvR images/ $PUBLIC_DIR/
-cp -uvR robots.txt sitemap.xml $PUBLIC_DIR/
+cp -uvR assets/* $PUBLIC_DIR/
 
 for file in $(find . -name "*.xml" -not -name "site.xml"); do
   file=$(echo $file | sed -r 's#\./(.*)#\1#g')
