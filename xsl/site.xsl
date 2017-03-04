@@ -21,31 +21,28 @@
 
   <body>
     <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="navbar-header">
-<a class="navbar-brand" href="/">
-	<img id="logo" alt="Logo" src="assets/images/mechanic_logo.png"/>
+<div class="row">
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+<a id="logo" href="/">
+	<img alt="Logo" src="assets/images/mechanic_logo.png"/>
       </a>
-            </div>
-          <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav nav-pills navbar-right">
+</div>
+<div class="navbar col-xs-10 col-sm-10 col-md-10 col-lg-10">
+<ul class="nav nav-pills">
             <xsl:for-each select="pages/page[@short-title!='']">
-            <li class="nav-item">
-              <a>
+            <li>
               <xsl:if test="./@path=$page">
-              <xsl:attribute name="class">nav-link active</xsl:attribute>
+              <xsl:attribute name="class">active</xsl:attribute>
               </xsl:if>
-              <xsl:if test="./@path!=$page">
-              <xsl:attribute name="class">nav-link</xsl:attribute>
-              </xsl:if>
+              <a>
               <xsl:attribute name="href"><xsl:value-of select="./@path"/>.html</xsl:attribute>
               <xsl:value-of select="@short-title"/>
               </a>
             </li>
             </xsl:for-each>
-          </ul>
-        </div>
-</nav>
+</ul>
+</div>
+</div>
 
       <xsl:apply-templates select="pages/page[@path=$page]"/>
 
