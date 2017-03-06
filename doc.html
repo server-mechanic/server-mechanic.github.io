@@ -24,91 +24,324 @@
 </div>
 <a id="doc"></a><div class="row">
         <div class="col-lg-12">
-          <h1>
+            <h1>
 <a id="documentation"></a>Documentation</h1>
-          <h2>CLI - Sub Commands and Options</h2>
-
-          <table class="table table-striped table-bordered">
-            <tr>
-<td>Command</td>
-<td>Option</td>
-<td>Since</td>
-<td>Example</td>
-<td>Description</td>
-</tr>
-            <tr>
-<td>(all)</td>
-<td>-v</td>
-<td>0.1</td>
-<td></td>
-<td>Be verbose, increase logging output.</td>
-</tr>
-            <tr>
-<td>migrate</td>
-<td></td>
-<td>0.1</td>
-<td>mechanic migrate</td>
-<td>Apply pending migrations.</td>
-</tr>
-            <tr>
-<td></td>
-<td></td>
-<td>0.1</td>
-<td>mechanic -v migrate -- /entrypoint.sh param=value</td>
-<td>Execute follow up command if all migrations have been successfully applied.</td>
-</tr>
-            <tr>
-<td>list-migrations</td>
-<td></td>
-<td>0.1</td>
-<td>mechanic list-migrations</td>
-<td>List migrations with status as if recorded in internal database.</td>
-</tr>
-            <tr>
-<td></td>
-<td>--order-by=id|start_date</td>
-<td>0.1</td>
-<td>mechanic list-migrations --order-by=id</td>
-<td>Specify order for migrations list.<br> If unspecified, order is by start_date.</td>
-</tr>
-            <tr>
-<td>help</td>
-<td></td>
-<td>0.1</td>
-<td>mechanic help</td>
-<td>Print sub commands and options.</td>
-</tr>
-            <tr>
-<td>version</td>
-<td></td>
-<td>0.1</td>
-<td>mechanic version</td>
-<td>Print version information.</td>
-</tr>
-          </table>
-
-          <h3>Environment Variables</h3>
-          <table class="table table-striped table-bordered">
-            <tr>
-<td>Environment Variable</td>
-<td>Since</td>
-<td>Example</td>
-<td>Description</td>
-</tr>
-            <tr>
-<td>MECHANIC_ROOT_DIR</td>
-<td>0.1</td>
-<td>/home/developer/test-dir</td>
-<td>Root directory for execution. This is mainly used for integration testing.</td>
-</tr>
-          </table> 
+            <p>If you want to manage your machines (bare metal, virtual machines, containers or simply workspaces) in a
+                reproducable way, one strategy is the creation of "infrastructure as code". Server Mechanic executes
+                this code and so your infrastructure is created or changed.
+            </p>
         </div>
-      </div>
+    </div>
 <div class="row">
         <div class="col-lg-12">
-          <h2>The Configuration - /etc/mechanic.conf</h2>
-          <pre class="code">
-# /etc/mechanic.conf
+            <h2>How it works</h2>
+            <h4>Server Mechanic for servers and virtual machines</h4>
+            <p>With Server Mechanic you author changes to your machines as scripts in your favorite language, e.g. shell
+                scripts. Server Mechanic collects these migration scripts, executes them and records them as applied in
+                an internal database. Next time only new migrations will be executed. In case of an error you fix the
+                problem and start over.
+            </p>
+        </div>
+    </div>
+<div class="row">
+        <div class="col-lg-12">
+            <h4>Server Mechanic for Docker containers</h4>
+            <p>Docker already utilizes the step by step approach with the commands in your Dockerfile. These commands
+                are run at container image build time. So you have full access to the container's internal state. But
+                external volumes cannot be manipulated by Dockerfile commands. Here Server Mechanic comes into play.
+            </p>
+            <p>Server Mechanic is started on container startup, applies your migration which migrates the state in your
+                volumes, then container startup proceeds. So you can roll out adjustments to external volumes with new
+                container versions and containers and volumes stay in sync.
+            </p>
+        </div>
+    </div>
+<div class="row">
+        <div class="col-lg-12">
+            <h2>Supported Platforms</h2>
+            <table class="table table-bordered table-striped" id="platform-support">
+                <tr>
+                    <td>OS</td>
+                    <td>Dist.</td>
+                    <td>Version</td>
+                    <td>Arch.</td>
+                    <td>Supported</td>
+                    <td>Notes</td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Ubuntu</td>
+                    <td>xenial (16.04)</td>
+                    <td>i386</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Ubuntu</td>
+                    <td>xenial (16.04)</td>
+                    <td>amd64</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Ubuntu</td>
+                    <td>yakkety (16.10)</td>
+                    <td>i386</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Ubuntu</td>
+                    <td>yakkety (16.10)</td>
+                    <td>amd64</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Debian</td>
+                    <td>wheezy (7)</td>
+                    <td>i386</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Debian</td>
+                    <td>wheezy (7)</td>
+                    <td>amd64</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Debian</td>
+                    <td>jessie (8)</td>
+                    <td>i386</td>
+                    <td class="supported">Yes</td>
+                    <td>
+                        <a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install
+                            broken!
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Debian</td>
+                    <td>jessie (8)</td>
+                    <td>amd64</td>
+                    <td class="supported">Yes</td>
+                    <td>
+                        <a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install
+                            broken!
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Debian</td>
+                    <td>sid (9)</td>
+                    <td>i386</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Debian</td>
+                    <td>sid (9)</td>
+                    <td>amd64</td>
+                    <td class="supported">Yes</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Fedora</td>
+                    <td>25</td>
+                    <td>i386</td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Fedora</td>
+                    <td>25</td>
+                    <td>amd64</td>
+                    <td class="unsupported">Not yet</td>
+                    <td>In Preparation</td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Centos</td>
+                    <td>7</td>
+                    <td>i386</td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Centos</td>
+                    <td>7</td>
+                    <td>amd64</td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>SuSE</td>
+                    <td></td>
+                    <td></td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Linux</td>
+                    <td>Arch</td>
+                    <td></td>
+                    <td></td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>BSD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>OSX</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Solaris</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="unsupported">Not yet</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Windows</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="unsupported">Not sure</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div class="row">
+        <div class="col-lg-12">
+            <h2>Installation</h2>
+
+            <p>The easiest way to install Server Mechanic is the installer script. No magic, the installer script</p>
+            <ul>
+                <li>adds a package repository to your system</li>
+                <li>and installs the mechanic package.</li>
+            </ul>
+
+            <p>Execute the install script via the following command:</p>
+            <pre class="code">
+curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
+</pre>
+        </div>
+    </div>
+<div class="row">
+        <div class="col-lg-12">
+            <h2>CLI - Sub Commands and Options</h2>
+
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td>Command</td>
+                    <td>Option</td>
+                    <td>Since</td>
+                    <td>Example</td>
+                    <td>Description</td>
+                </tr>
+                <tr>
+                    <td>(all)</td>
+                    <td>-v</td>
+                    <td>0.1</td>
+                    <td></td>
+                    <td>Be verbose, increase logging output.</td>
+                </tr>
+                <tr>
+                    <td>migrate</td>
+                    <td></td>
+                    <td>0.1</td>
+                    <td>mechanic migrate</td>
+                    <td>Apply pending migrations.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>0.1</td>
+                    <td>mechanic -v migrate -- /entrypoint.sh param=value</td>
+                    <td>Execute follow up command if all migrations have been successfully applied.</td>
+                </tr>
+                <tr>
+                    <td>list-migrations</td>
+                    <td></td>
+                    <td>0.1</td>
+                    <td>mechanic list-migrations</td>
+                    <td>List migrations with status as if recorded in internal database.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>--order-by=id|start_date</td>
+                    <td>0.1</td>
+                    <td>mechanic list-migrations --order-by=id</td>
+                    <td>Specify order for migrations list.
+                        <br>
+                        If unspecified, order is by start_date.
+                    </td>
+                </tr>
+                <tr>
+                    <td>help</td>
+                    <td></td>
+                    <td>0.1</td>
+                    <td>mechanic help</td>
+                    <td>Print sub commands and options.</td>
+                </tr>
+                <tr>
+                    <td>version</td>
+                    <td></td>
+                    <td>0.1</td>
+                    <td>mechanic version</td>
+                    <td>Print version information.</td>
+                </tr>
+            </table>
+
+            <h3>Environment Variables</h3>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td>Environment Variable</td>
+                    <td>Since</td>
+                    <td>Example</td>
+                    <td>Description</td>
+                </tr>
+                <tr>
+                    <td>MECHANIC_ROOT_DIR</td>
+                    <td>0.1</td>
+                    <td>/home/developer/test-dir</td>
+                    <td>Root directory for execution. This is mainly used for integration testing.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div class="row">
+        <div class="col-lg-12">
+            <h2>The Configuration - /etc/mechanic.conf</h2>
+            <pre class="code"># /etc/mechanic.conf
 [main]
 log_file=/mechanic.volume/log/mechanic.log
 pre_migration_dirs=/var/lib/mechanic/pre-migration.d/
@@ -116,112 +349,135 @@ migration_dirs=/var/lib/mechanic/migration.d/
 post_migration_dirs=/var/lib/mechanic/post-migration.d/
 run_dir=/mechanic.volume/tmp/
 state_dir=/mechanic.volume/state
-          </pre>
+</pre>
 
-          <h3>Configuration Options</h3>
-          <table class="table table-striped table-bordered">
-            <tr>
-<td>Option</td>
-<td>Since</td>
-<td>Default</td>
-<td>Example</td>
-<td>Description</td>
-</tr>
-            <tr>
-<td>log_file</td>
-<td>0.1</td>
-<td>${MECHANIC_ROOT_DIR}/var/log/mechanic.log</td>
-<td>/var/log/mechanic.log<br>/dev/stderr</td>
-<td>File mechanic writes log messages to.</td>
-</tr>
-            <tr>
-<td>pre_migration_dirs</td>
-<td>0.4</td>
-<td>${MECHANIC_ROOT_DIR}/etc/mechanic/pre-migration.d/: \<br>${MECHANIC_ROOT_DIR}/var/lib/mechanic/pre-migration.d</td>
-<td></td>
-<td>Colon seperated list of pathes mechanic collects pre migration scripts from.</td>
-</tr>
-            <tr>
-<td>migration_dirs</td>
-<td>0.1</td>
-<td>${MECHANIC_ROOT_DIR}/etc/mechanic/migration.d/: \<br>${MECHANIC_ROOT_DIR}/var/lib/mechanic/migration.d</td>
-<td></td>
-<td>Colon seperated list of pathes mechanic collects the migration scripts from.</td>
-</tr>
-            <tr>
-<td>post_migration_dirs</td>
-<td>0.4</td>
-<td>${MECHANIC_ROOT_DIR}/etc/mechanic/post-migration.d/: \<br>${MECHANIC_ROOT_DIR}/var/lib/mechanic/post-migration.d</td>
-<td></td>
-<td>Colon seperated list of pathes mechanic collects post migration scripts from.</td>
-</tr>
-            <tr>
-<td>run_dir</td>
-<td>0.4</td>
-<td>${MECHANIC_ROOT_DIR}/var/lib/mechanic/tmp</td>
-<td>/var/lib/mechanic/tmp<br>/tmp</td>
-<td>Location for migration execution directories.<br>When a migration failed diagnostic data can be found here. (So /tmp is a moderate choice.)</td>
-</tr>
-            <tr>
-<td>state_dir</td>
-<td>0.1</td>
-<td>${MECHANIC_ROOT_DIR}/var/lib/mechanic/state</td>
-<td></td>
-<td>Location where Server Mechanic stores the migration state. Currently the migration state is stored in a sqlite database named inventory.db below this directory.</td>
-</tr>
-          </table>
+            <h3>Configuration Options</h3>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td>Option</td>
+                    <td>Since</td>
+                    <td>Default</td>
+                    <td>Example</td>
+                    <td>Description</td>
+                </tr>
+                <tr>
+                    <td>log_file</td>
+                    <td>0.1</td>
+                    <td>${MECHANIC_ROOT_DIR}/var/log/mechanic.log</td>
+                    <td>/var/log/mechanic.log<br>/dev/stderr
+                    </td>
+                    <td>File mechanic writes log messages to.</td>
+                </tr>
+                <tr>
+                    <td>pre_migration_dirs</td>
+                    <td>0.4</td>
+                    <td>${MECHANIC_ROOT_DIR}/etc/mechanic/pre-migration.d/: \<br>
+                        ${MECHANIC_ROOT_DIR}/var/lib/mechanic/pre-migration.d
+                    </td>
+                    <td></td>
+                    <td>Colon seperated list of pathes mechanic collects pre migration scripts from.</td>
+                </tr>
+                <tr>
+                    <td>migration_dirs</td>
+                    <td>0.1</td>
+                    <td>${MECHANIC_ROOT_DIR}/etc/mechanic/migration.d/: \<br>
+                        ${MECHANIC_ROOT_DIR}/var/lib/mechanic/migration.d
+                    </td>
+                    <td></td>
+                    <td>Colon seperated list of pathes mechanic collects the migration scripts from.</td>
+                </tr>
+                <tr>
+                    <td>post_migration_dirs</td>
+                    <td>0.4</td>
+                    <td>${MECHANIC_ROOT_DIR}/etc/mechanic/post-migration.d/: \<br>
+                        ${MECHANIC_ROOT_DIR}/var/lib/mechanic/post-migration.d
+                    </td>
+                    <td></td>
+                    <td>Colon seperated list of pathes mechanic collects post migration scripts from.</td>
+                </tr>
+                <tr>
+                    <td>run_dir</td>
+                    <td>0.4</td>
+                    <td>${MECHANIC_ROOT_DIR}/var/lib/mechanic/tmp</td>
+                    <td>/var/lib/mechanic/tmp<br>/tmp
+                    </td>
+                    <td>Location for migration execution directories.<br>When a migration failed diagnostic data can be
+                        found here. (So /tmp is a moderate choice.)
+                    </td>
+                </tr>
+                <tr>
+                    <td>state_dir</td>
+                    <td>0.1</td>
+                    <td>${MECHANIC_ROOT_DIR}/var/lib/mechanic/state</td>
+                    <td></td>
+                    <td>Location where Server Mechanic stores the migration state. Currently the migration state is
+                        stored in a sqlite database named inventory.db below this directory.
+                    </td>
+                </tr>
+            </table>
 
         </div>
-      </div>
+    </div>
 <div class="row">
         <div class="col-lg-12">
-          <h1>
-<a id="development"></a>Development</h1>
-          <p>Server Mechanic is written in python. (Early versions where based on Go, C and C++.)</p>
-          <p>Unit tests are written with the python mock lib. (Everything testable <i>should</i> be tested via a unit test.)</p>
-          <p>Integration tests are currently based on a set of custom shell scripts performing the following steps to verify several scenarios (There is a real chance that we switch to docker containers in the near future - for now the setup is sufficient.):</p>
-          <ul>
-            <li>Setup a test scenario based on files in a temporary folder.</li>
-            <li>Run the mechanic in this temporary folder utilizing MECHANIC_ROOT_DIR to change mechanic root.</li>
-            <li>Then exit code, contents of the test file system, the internal state of the mechanic database are merged into an output listing.</li>
-            <li>The output listing is compared to the expected output.</li>
-          </ul>
+            <h1>
+<a id="development"></a>Development
+            </h1>
+            <p>Server Mechanic is written in python. (Early versions where based on Go, C and C++.)</p>
+            <p>Unit tests are written with the python mock lib. (Everything testable <i>should</i> be tested via a unit
+                test.)
+            </p>
+            <p>Integration tests are currently based on a set of custom shell scripts performing the following steps to
+                verify several scenarios (There is a real chance that we switch to docker containers in the near future
+                - for now the setup is sufficient.):
+            </p>
+            <ul>
+                <li>Setup a test scenario based on files in a temporary folder.</li>
+                <li>Run the mechanic in this temporary folder utilizing MECHANIC_ROOT_DIR to change mechanic root.</li>
+                <li>Then exit code, contents of the test file system, the internal state of the mechanic database are
+                    merged into an output listing.
+                </li>
+                <li>The output listing is compared to the expected output.</li>
+            </ul>
 
-          <h2>Prerequesites</h2>
-          <h3>Install system packages</h3>
-          <pre class="code"># RedHat/ CentOS/ Fedora
+            <h2>Prerequesites</h2>
+            <h3>Install system packages</h3>
+            <pre class="code"># RedHat/ CentOS/ Fedora
 yum -y install python sqlite sqlite-devel make git
 # Debian/ Ubuntu
-apt-get install -y python2.7 sqlite3 sqlite3-dev make</pre>
+apt-get install -y python2.7 sqlite3 sqlite3-dev make
+</pre>
 
-          <h3>Install python packages</h3>
-          <pre class="code">pip install mock coverage</pre>
+            <h3>Install python packages</h3>
+            <pre class="code">pip install mock coverage</pre>
 
-          <h3>Install docker</h3>
-          <p>For docker installation refer to <a target="_blank" href="https://docs.docker.com/engine/installation/linux/">docker installation instructions</a>.</p>
+            <h3>Install docker</h3>
+            <p>For docker installation refer to <a target="_blank" href="https://docs.docker.com/engine/installation/linux/">docker
+                installation instructions</a>.
+            </p>
 
-          <h3>Build the project</h3>
-          <p>This is the make target you probably will use for development.</p>
-          <ul>
-<li>Precompiles the python code</li>
-          <li>runs unit tests</li>
-          <li>runs integration tests.</li>
-          </ul>
-          <pre class="code">make</pre>
-          <p>or</p>
-          <pre class="code">make default</pre>
+            <h3>Build the project</h3>
+            <p>This is the make target you probably will use for development.</p>
+            <ul>
+                <li>Precompiles the python code</li>
+                <li>runs unit tests</li>
+                <li>runs integration tests.</li>
+            </ul>
+            <pre class="code">make</pre>
+            <p>or</p>
+            <pre class="code">make default</pre>
 
-          <h3>Build all</h3>
-          <ul>
-<li>Precompiles the python code</li>
-          <li>runs unit tests</li>
-          <li>runs integration tests</li>
-          <li>generates coverage report</li>
-          <li>build installation packages.</li>
-          </ul>
-          <pre class="code">make all</pre>
+            <h3>Build all</h3>
+            <ul>
+                <li>Precompiles the python code</li>
+                <li>runs unit tests</li>
+                <li>runs integration tests</li>
+                <li>generates coverage report</li>
+                <li>build installation packages.</li>
+            </ul>
+            <pre class="code">make all</pre>
         </div>
-      </div>
+    </div>
 <footer class="footer"><div class="row">
 <div class="col-md-6 col-lg-6"><p>Copyright © 2016, 2017 by the Server Mechanic Team.</p></div>
 <div class="col-md-4 col-lg-4"><p class="pull-right"><a href="privacy.html">Privacy</a>   <a href="project.html#license">License</a></p></div>

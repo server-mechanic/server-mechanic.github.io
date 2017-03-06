@@ -24,255 +24,96 @@
 </div>
 <a id="quickstart"></a><div class="row">
         <div class="col-lg-12">
-          <h1>
-<a id="getting-started"></a>Quickstart</h1>
-          <p>If you want to manage your machines (bare metal, virtual machines, containers or simply workspaces) in a reproducable way, one strategy is the creation of "infrastructure as code". Server Mechanic executes this code and so your infrastructure is created or changed.</p>
+            <h1>
+<a id="getting-started"></a>Quickstart
+            </h1>
+            <p>Server Mechanic is about changing a server or virtual machine by applying a migration script once and
+                only once. So you can checkin setup and adjustments to your infrastructure as scripts into your
+                preferred source code management system.
+            </p>
         </div>
-      </div>
-<div class="row">
-        <div class="col-lg-12">
-<h2>How it works</h2>
-          <h4>Server Mechanic for servers and virtual machines</h4>
-          <p>With Server Mechanic you author changes to your machines as scripts in your favorite language, e.g. shell scripts. Server Mechanic collects these migration scripts, executes them and records them as applied in an internal database. Next time only new migrations will be executed. In case of an error you fix the problem and start over.
-</p>
-      </div>
-  </div>
-<div class="row">
-        <div class="col-lg-12">
-          <h4>Server Mechanic for Docker containers</h4>
-          <p>Docker already utilizes the step by step approach with the commands in your Dockerfile. These commands are run at container image build time. So you have full access to the container's internal state. But external volumes cannot be manipulated by Dockerfile commands. Here Server Mechanic comes into play.</p>
-          <p>Server Mechanic is started on container startup, applies your migration which migrates the state in your volumes, then container startup proceeds. So you can roll out adjustments to external volumes with new container versions and containers and volumes stay in sync.</p>
-      </div>
-  </div>
-<div class="row">
-        <div class="col-lg-12">
-<h2>Supported Platforms</h2>
-  <p>Please check if your platform is supported.</p>
-  <table class="table table-bordered table-striped" id="platform-support">
-    <tr>
-<td>OS</td>
-<td>Dist.</td>
-<td>Version</td>
-<td>Arch.</td>
-<td>Supported</td>
-<td>Notes</td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Ubuntu</td>
-<td>xenial (16.04)</td>
-<td>i386</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Ubuntu</td>
-<td>xenial (16.04)</td>
-<td>amd64</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Ubuntu</td>
-<td>yakkety (16.10)</td>
-<td>i386</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Ubuntu</td>
-<td>yakkety (16.10)</td>
-<td>amd64</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Debian</td>
-<td>wheezy (7)</td>
-<td>i386</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Debian</td>
-<td>wheezy (7)</td>
-<td>amd64</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Debian</td>
-<td>jessie (8)</td>
-<td>i386</td>
-<td class="supported">Yes</td>
-<td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install broken!</a></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Debian</td>
-<td>jessie (8)</td>
-<td>amd64</td>
-<td class="supported">Yes</td>
-<td><a href="https://github.com/server-mechanic/mechanic/issues/5" target="_blank">Package install broken!</a></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Debian</td>
-<td>sid (9)</td>
-<td>i386</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Debian</td>
-<td>sid (9)</td>
-<td>amd64</td>
-<td class="supported">Yes</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Fedora</td>
-<td>25</td>
-<td>i386</td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Fedora</td>
-<td>25</td>
-<td>amd64</td>
-<td class="unsupported">Not yet</td>
-<td>In Preparation</td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Centos</td>
-<td>7</td>
-<td>i386</td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Centos</td>
-<td>7</td>
-<td>amd64</td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>SuSE</td>
-<td></td>
-<td></td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>Linux</td>
-<td>Arch</td>
-<td></td>
-<td></td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>BSD</td>
-<td></td>
-<td></td>
-<td></td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>OSX</td>
-<td></td>
-<td></td>
-<td></td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>Solaris</td>
-<td></td>
-<td></td>
-<td></td>
-<td class="unsupported">Not yet</td>
-<td></td>
-</tr>
-    <tr>
-<td>Windows</td>
-<td></td>
-<td></td>
-<td></td>
-<td class="unsupported">Not sure</td>
-<td></td>
-</tr>
-  </table>
     </div>
-  </div>
 <div class="row">
         <div class="col-lg-12">
-          <h2>Installation</h2>
-
-          <p>The easiest way to install Server Mechanic is the installer script. No magic, the installer script</p>
-          <ul>
-            <li>adds a package repository to your system</li>
-            <li>and installs the mechanic package.</li>
-          </ul>
-
-          <p>Execute the install script via the following command:</p>
-          <pre class="code">
-curl -s https://raw.githubusercontent.com/server-mechanic/packages/master/install-mechanic.sh | sudo bash -s unstable
-</pre>
+            <h2>How it works</h2>
+            <p>With Server Mechanic you author changes to your machines as scripts in your favorite language, e.g. shell
+                scripts. Server Mechanic collects these migration scripts, executes them and records them as applied in
+                an internal database. Next time only new migrations will be executed. In case of an error you fix the
+                problem and start over.
+            </p>
         </div>
-      </div>
+    </div>
 <div class="row">
         <div class="col-lg-12">
-          <h2>First steps</h2>
-          <p>A migration can be written as a shell script. This is a simple example migration:</p>
-          <pre class="code">#!/bin/bash -ex
+            <h2>The Server Mechanic echanic playground</h2>
+            <p>The Server Mechanic Playgrund (mechanic-playground) is a docker container with a mechanic preinstalled so
+                you instantly can start playing with mechnic.
+            </p>
 
-echo "# Hooray, mechanic is running." &gt; /tmp/hooray.log
-exit 0
+            <h4>Pull from dockerhub</h4>
+            <pre class="code">
+docker pull servermechanic/mechanic-playground
 </pre>
 
-          <p>The next command places the migration script in the mechanic migrations folder and makes it executable.</p>
-          <pre class="code">cat - &gt;/var/lib/mechanic/migration.d/20161224_hooray.sh &lt;&lt;EOB
+            <h4>Create a playground</h4>
+            <pre class="code"># create folder to mount as mechanic volume
+mkdir srv-mechanic-volume
+
+# create folder mechanic will pickup migrations from
+mkdir srv-mechanic-volume/migration.d/
+
+# start the container
+docker run -d --name my-mechanic-playground \
+    -v $PWD/srv-mechanic-volume:/srv/mechanic \
+    mechanic-playground
+</pre>
+
+            <p>List migrations already applied</p>
+            <pre class="code">
+docker exec -t my-mechanic-playground mechanic list-migrations
+</pre>
+            <p>This should list an initial migration applied on startup. One migration is part of the container and is
+                applied on first startup.
+            </p>
+
+            <h2>Add own migration</h2>
+            <p>A migration can be written as a shell script. This is a simple example migration:</p>
+            <pre class="code">
 #!/bin/bash -ex
 
-echo "# Hooray, mechanic is running." &gt; /tmp/hooray.log
+echo "# config for hooray" &gt; /srv/mechanic/hooray.conf
+exit 0
+</pre>
+
+            <p>The next command places the migration script in the mechanic migrations folder and makes it executable.
+            </p>
+
+            <pre class="code">
+cat - &gt; srv-mechanic-volume/migration.d/20161224_hooray.sh &lt;&lt;EOB
+#!/bin/bash -ex
+
+echo "# config for hooray" &gt; /srv/mechanic/hooray.conf
 exit 0
 EOB
-chmod 755 /var/lib/mechanic/migration.d/20161224_hooray.sh
+chmod 755 srv-mechanic-volume/migration.d/20161224_hooray.sh
 </pre>
 
-          <p>Run the Server Mechanic to apply migrations:</p>
-          <pre class="code">
-mechanic migrate
+            <p>Run the Server Mechanic to apply migrations</p>
+            <pre class="code">
+docker exec -t my-mechanic-playground mechanic -v migrate
 </pre>
 
-          <p>Query Server Mechanic if the migration has been applied:</p>
-          <pre class="code">
-mechanic list-migrations
+            <p>Query Server Mechanic if the migration has been applied</p>
+            <pre class="code">
+docker exec -t my-mechanic-playground mechanic list-migrations
 </pre>
 
-          <p>Verify that the migration's effect is visible:</p>
-          <pre class="code">
-cat /tmp/hooray.log
-# Hooray, mechanic is running.
+            <p>Verify that the migration's effect is visible:</p>
+            <pre class="code">
+cat srv-mechanic-volume/hooray.conf
 </pre>
         </div>
-      </div>
+    </div>
 <footer class="footer"><div class="row">
 <div class="col-md-6 col-lg-6"><p>Copyright © 2016, 2017 by the Server Mechanic Team.</p></div>
 <div class="col-md-4 col-lg-4"><p class="pull-right"><a href="privacy.html">Privacy</a>   <a href="project.html#license">License</a></p></div>
