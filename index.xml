@@ -11,7 +11,9 @@
           &#183; Workspaces
         </p>
         <p>A lightweight alternative to tools like puppet, ansible, saltstack, etc.</p>
-        <p><a class="btn btn-lg btn-success" href="quickstart.html" role="button">Get started now</a></p>
+        <p>
+          <a class="btn btn-lg btn-success" href="quickstart.html" role="button">Try with Docker</a>
+          <a class="btn btn-lg btn-primary" href="doc.html#installation" role="button">Install on Machine</a></p>
       </div>
 
 <!--

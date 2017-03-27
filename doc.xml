@@ -222,7 +222,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h2>Installation</h2>
+            <h2><a id="installation"></a>Installation</h2>
 
             <p>The easiest way to install Server Mechanic is the installer script. No magic, the installer script</p>
             <ul>
