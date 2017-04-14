@@ -52,7 +52,7 @@
         <p>Copyright &#169; 2016, 2017 by the Server Mechanic Team.</p>
         </div>
         <div class="col-md-4 col-lg-4">
-        <p class="pull-right"><a href="privacy.html">Privacy</a> &#160; <a href="project.html#license">License</a></p>
+        <p class="pull-right"><a href="privacy.html">Privacy Statement</a> &#160; <a href="project.html#license">License</a></p>
         </div>
         <div class="col-md-2 col-lg-2">
         <p class="pull-right">
